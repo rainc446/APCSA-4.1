@@ -151,10 +151,12 @@ public class Algorithms {
                 frequencyMap.put(nextInt, 1);
             }
         }
+
         for (int i : frequencyMap.keySet()) //finding the largest frequency of numbers
         {
             if (frequencyMap.get(i) > instances) instances = frequencyMap.get(i);
         }
+
         for (int i : frequencyMap.keySet()) //finding the numbers that appear the most
         {
             if (frequencyMap.get(i) == instances)
