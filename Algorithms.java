@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -13,6 +14,7 @@ public class Algorithms {
         int greaterThan = moreThanFiveHundred();
         int max = max();
         int min = min();
+        int sum = sum();
         double average = average();
 
         System.out.println(odds);
@@ -21,6 +23,7 @@ public class Algorithms {
         System.out.println(greaterThan);
         System.out.println(max);
         System.out.println(min);
+        System.out.println(sum);
         System.out.println(average);
 
         s.close();
@@ -102,5 +105,44 @@ public class Algorithms {
         }
         average = Math.round(sum/nums * 1000) / 1000.0;
         return average;
+    }
+
+    public static int sum() throws FileNotFoundException{
+        s = new Scanner(f);
+        int sum = 0;
+        while (s.hasNext()){
+            sum += s.nextInt();
+        }
+        return sum;
+    }
+
+    public static double mode() throws FileNotFoundException{
+        s = new Scanner(f);
+        int nextNum;
+        ArrayList<Integer> uniqueNums = new ArrayList<Integer>();
+        int instances = 0;
+        int lastInstances =
+        for (int num = 0; num < average(); num++){
+            while (s.hasNext()){
+                if (s.nextInt() == num){
+                    instances++;
+                }
+            }
+            if (instances > lastInstances){
+
+            }
+        }
+
+        //            nextNum = s.nextInt();
+//            for (int i = 0; i < uniqueNums.toArray().length; i++){
+//                if (uniqueNums.get(i) == nextNum) {
+//
+//                    break;
+//                }
+//            }
+//            if (){
+//
+//            }
+//        }
     }
 }
