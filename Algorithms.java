@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -119,22 +119,42 @@ public class Algorithms {
     }
 
     public static double mode() throws FileNotFoundException{
+        s = new Scanner(f);
+        int nextInt = 0;
+        boolean inHashMap = false;
         int instances = 0;
-        int lastInstances = 0;
-        int mode = 0;
-        for (int num = 0; num <= max(); num++){
-            s = new Scanner(f);
-            while (s.hasNext()){
-                if (s.nextInt() == num){
-                    instances++;
+        int modeNums = 0;
+        double numOfModes = 0;
+        HashMap<Integer, Integer> frequencyMap = new HashMap<>();
+        while (s.hasNext()){
+            nextInt = s.nextInt();
+            //checks if the number is stored as a key in the frequencyMap
+            for (int i : frequencyMap.keySet()) {
+                if (nextInt == i) {
+                    frequencyMap.put(i, frequencyMap.get(i) + 1); //adds one the frequency of the number being checked
+                    inHashMap = true;
                 }
             }
-            if (instances > lastInstances){
-                lastInstances = instances;
-                mode = num;
+            //if nextInt is not in the Hashmap then it will be added
+            if (inHashMap){
+                inHashMap = false;
             }
-            System.out.println(mode);
+            else {
+                frequencyMap.put(nextInt, 1);
+            }
         }
-        return mode;
+        for (int i : frequencyMap.keySet()) //finding the largest frequency of numbers
+        {
+            if (frequencyMap.get(i) > instances) instances = frequencyMap.get(i);
+        }
+        for (int i : frequencyMap.keySet()) //finding the numbers that appear the most
+        {
+            if (frequencyMap.get(i) == instances)
+            {
+                modeNums += i;
+                numOfModes++;
+            }
+        }
+        return modeNums / numOfModes;
     }
 }
