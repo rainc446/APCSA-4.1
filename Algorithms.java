@@ -8,24 +8,24 @@ public class Algorithms {
     private static Scanner s;
     public static void main(String[] args) throws FileNotFoundException {
         f = new File("Numbers.txt");
-//        int odds = odds();
-//        int evens = evens();
-//        int tens = twoDigits();
-//        int greaterThan = moreThanFiveHundred();
-//        int max = max();
-//        int min = min();
-//        int sum = sum();
-//        double average = average();
+        int odds = odds();
+        int evens = evens();
+        int tens = twoDigits();
+        int greaterThan = moreThanFiveHundred();
+        int max = max();
+        int min = min();
+        int sum = sum();
+        double average = average();
         double mode = mode();
 
-//        System.out.println(odds);
-//        System.out.println(evens);
-//        System.out.println(tens);
-//        System.out.println(greaterThan);
-//        System.out.println(max);
-//        System.out.println(min);
-//        System.out.println(sum);
-//        System.out.println(average);
+        System.out.println(odds);
+        System.out.println(evens);
+        System.out.println(tens);
+        System.out.println(greaterThan);
+        System.out.println(max);
+        System.out.println(min);
+        System.out.println(sum);
+        System.out.println(average);
         System.out.println(mode);
 
         s.close();
