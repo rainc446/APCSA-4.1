@@ -108,7 +108,7 @@ public class Algorithms {
         s = new Scanner(f);
         double sum = 0;
         int nums = 0;
-        double average = 0;
+        double average;
         while (s.hasNext()) {
             sum += s.nextInt();
             nums++;
@@ -128,7 +128,7 @@ public class Algorithms {
 
     public static double mode() throws FileNotFoundException{
         s = new Scanner(f);
-        int nextInt = 0;
+        int nextInt;
         boolean inHashMap = false;
         int instances = 0;
         int modeNums = 0;
