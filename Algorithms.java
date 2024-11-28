@@ -3,10 +3,12 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 
+
 public class Algorithms {
     private static File f;
     private static Scanner s;
     public static void main(String[] args) throws FileNotFoundException {
+        long startTime = System.currentTimeMillis();
         f = new File("Numbers.txt");
         int odds = odds();
         int evens = evens();
@@ -27,8 +29,14 @@ public class Algorithms {
         System.out.println(sum);
         System.out.println(average);
         System.out.println(mode);
-
         s.close();
+
+        long endTime = System.currentTimeMillis();  // Get the end time
+        long duration = endTime - startTime;      // Calculate the runtime duration
+
+        System.out.println("Runtime: " + duration + " milliseconds");  // Output the runtime
+
+
     }
 
     public static int odds() throws FileNotFoundException{
