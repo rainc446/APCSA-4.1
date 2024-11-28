@@ -8,23 +8,25 @@ public class Algorithms {
     private static Scanner s;
     public static void main(String[] args) throws FileNotFoundException {
         f = new File("Numbers.txt");
-        int odds = odds();
-        int evens = evens();
-        int tens = twoDigits();
-        int greaterThan = moreThanFiveHundred();
-        int max = max();
-        int min = min();
-        int sum = sum();
-        double average = average();
+//        int odds = odds();
+//        int evens = evens();
+//        int tens = twoDigits();
+//        int greaterThan = moreThanFiveHundred();
+//        int max = max();
+//        int min = min();
+//        int sum = sum();
+//        double average = average();
+        double mode = mode();
 
-        System.out.println(odds);
-        System.out.println(evens);
-        System.out.println(tens);
-        System.out.println(greaterThan);
-        System.out.println(max);
-        System.out.println(min);
-        System.out.println(sum);
-        System.out.println(average);
+//        System.out.println(odds);
+//        System.out.println(evens);
+//        System.out.println(tens);
+//        System.out.println(greaterThan);
+//        System.out.println(max);
+//        System.out.println(min);
+//        System.out.println(sum);
+//        System.out.println(average);
+        System.out.println(mode);
 
         s.close();
     }
@@ -117,32 +119,22 @@ public class Algorithms {
     }
 
     public static double mode() throws FileNotFoundException{
-        s = new Scanner(f);
-        int nextNum;
-        ArrayList<Integer> uniqueNums = new ArrayList<Integer>();
         int instances = 0;
-        int lastInstances =
-        for (int num = 0; num < average(); num++){
+        int lastInstances = 0;
+        int mode = 0;
+        for (int num = 0; num <= max(); num++){
+            s = new Scanner(f);
             while (s.hasNext()){
                 if (s.nextInt() == num){
                     instances++;
                 }
             }
             if (instances > lastInstances){
-
+                lastInstances = instances;
+                mode = num;
             }
+            System.out.println(mode);
         }
-
-        //            nextNum = s.nextInt();
-//            for (int i = 0; i < uniqueNums.toArray().length; i++){
-//                if (uniqueNums.get(i) == nextNum) {
-//
-//                    break;
-//                }
-//            }
-//            if (){
-//
-//            }
-//        }
+        return mode;
     }
 }
