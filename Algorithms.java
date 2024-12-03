@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.io.File;
@@ -18,7 +19,7 @@ public class Algorithms {
         int min = min();
         int sum = sum();
         double average = average();
-        double mode = mode();
+        ArrayList<Integer> mode = mode();
 
         System.out.println(odds);
         System.out.println(evens);
@@ -28,7 +29,10 @@ public class Algorithms {
         System.out.println(min);
         System.out.println(sum);
         System.out.println(average);
-        System.out.println(mode);
+        for (Integer num : mode) {
+            System.out.println(num);
+        }
+
         s.close();
 
         long endTime = System.currentTimeMillis();  // Get the end time
@@ -126,13 +130,12 @@ public class Algorithms {
         return sum;
     }
 
-    public static double mode() throws FileNotFoundException{
+    public static ArrayList<Integer> mode() throws FileNotFoundException{
         s = new Scanner(f);
         int nextInt;
         boolean inHashMap = false;
         int instances = 0;
-        int modeNums = 0;
-        double numOfModes = 0;
+        ArrayList<Integer> modeNums = new ArrayList<>();
         HashMap<Integer, Integer> frequencyMap = new HashMap<>();
         while (s.hasNext()){
             nextInt = s.nextInt();
@@ -161,10 +164,9 @@ public class Algorithms {
         {
             if (frequencyMap.get(i) == instances)
             {
-                modeNums += i;
-                numOfModes++;
+                modeNums.add(i);
             }
         }
-        return modeNums / numOfModes;
+        return modeNums;
     }
 }
