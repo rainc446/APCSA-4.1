@@ -65,10 +65,12 @@ public class Algorithms {
 
     public static int twoDigits() throws FileNotFoundException{
         s = new Scanner(f);
+        int targetInt = s.nextInt();
         int twoDigits = 0;
         while (s.hasNext()) {
-            if (s.nextInt() >=10 && s.nextInt() < 1000)
+            if (targetInt >=10 &&  targetInt <= 99)
                 twoDigits++;
+            targetInt = s.nextInt();
         }
         return twoDigits;
     }
